@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-primary fixed-bottom">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; GameStore <?= date("Y") ?> Магазин компьютерных игр</p>
+        <p class="m-0 text-center text-white">Copyright &copy; BookStore <?= date("Y") ?> Магазин интересных книг</p>
     </div>
     <!-- /.container -->
 </footer>
