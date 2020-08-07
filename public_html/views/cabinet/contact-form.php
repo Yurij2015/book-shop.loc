@@ -27,24 +27,31 @@ include ROOT . "/views/layouts/header.php";
             <div class="row">
                 <div class="col-md-12 mb-4">
                     <h2 class="title text-center">Обратная связь</h2>
-                    <p class="text-danger">Для обращения к нам заполните форму обратной связи и наш менеджер свяжется с
+                    <p class="text-info">Для обращения к нам заполните форму обратной связи и наш менеджер свяжется с
                         Вами как можно быстрее.</p>
                     <div class="login-form">
                         <?php if (isset($errors) && is_array($errors)): ?>
                             <ul>
                                 <?php foreach ($errors as $error): ?>
-                                    <li> - <?php echo $error; ?></li>
+                                    <li class="text-danger"> - <?php echo $error; ?></li>
                                 <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                        <?php if (isset($msg)): ?>
+                            <ul>
+                                <li class="text-success"> - <?php echo $msg; ?></li>
                             </ul>
                         <?php endif; ?>
                         <form action="#" method="post">
                             <div class="form-group">
                                 <label for="name">Ваша имя</label>
-                                <input id="name" type="text" class="form-control" name="userName" placeholder="Введите свое имя">
+                                <input id="name" type="text" class="form-control" name="userName"
+                                       placeholder="Введите свое имя">
                             </div>
                             <div class="form-group">
                                 <label for="userEmail">Электронный адрес</label>
-                                <input class="form-control" type="email" id="userEmail" name="userEmail" placeholder="Введите E-mail">
+                                <input class="form-control" type="email" id="userEmail" name="userEmail"
+                                       placeholder="Введите E-mail">
                             </div>
                             <div class="form-group">
                                 <label for="question">Вопрос</label>

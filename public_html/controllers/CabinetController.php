@@ -33,14 +33,10 @@ class CabinetController
             if (!isset($question) || empty($question)) {
                 $errors[] = 'Заполните поле "Вопрос" ';
             }
-
             if ($errors == false) {
-                // Если ошибок нет
-                // Добавляем новую категорию
-                Category::createCategory($userName, $userEmail, $question);
-
-                // Перенаправляем пользователя на страницу управлениями категориями
-                header("Location: /");
+                if (ContactForm::addQuestion($userName, $userEmail, $question) === true) {
+                    $msg = "Вопрос отправлен!";
+                }
             }
         }
 
